@@ -10,13 +10,17 @@
 }
 
 .upper-left-high-scores {
-    text-align: left;
     color: var(--view-high-scores-upper-left);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
 }
 
 .time {
-    text-align: right;
     color: var(--heading-text-color);
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .start-page {
@@ -51,28 +55,22 @@ width: 700px;
     width: 700px;
 }
 
-/* .first-question-answers {
-    color: var(--answer-text-color);
-    background-color: var(--answer-background-color);
-    font-weight: normal;
-    max-width: 150px;
-    text-align: left;
-} */
-
-#strings {
-    color: var(--answer-text-color);
-    background-color: var(--answer-background-color);
-    text-align: left;
-    border: none;
-    padding: 10px 25px;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-#booleans {
+#strings,
+#booleans,
+#alerts,
+#numbers,
+#quotes,
+#curly-brackets,
+#parenthesis,
+#square-brackets,
+#numbers-and-strings,
+#other-arrays,
+#all-of-the-above,
+#commas,
+#javascript,
+#terminal-bash,
+#for-loops,
+#console.log {
     color: var(--answer-text-color);
     background-color: var(--answer-background-color);
     text-align: left;
@@ -83,62 +81,4 @@ width: 700px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-}
-
-#alerts {
-    color: var(--answer-text-color);
-    background-color: var(--answer-background-color);
-    text-align: left;
-    border: none;
-    padding: 10px 25px;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-#numbers {
-    color: var(--answer-text-color);
-    background-color: var(--answer-background-color);
-    text-align: left;
-    border: none;
-    padding: 10px 25px;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.second-question-answers {
-    color: var(--answer-text-color);
-    background-color: var(--answer-background-color);
-    font-weight: normal;
-    max-width: 230px;
-    text-align: left;
-}
-
-.third-question-answers {
-    color: var(--answer-text-color);
-    background-color: var(--answer-background-color);
-    font-weight: normal;
-    max-width: 270px;
-    text-align: left;
-}
-
-.fourth-question-answers {
-    color: var(--answer-text-color);
-    background-color: var(--answer-background-color);
-    font-weight: normal;
-    max-width: 200px;
-    text-align: left;
-}
-
-.fifth-question-answers {
-    color: var(--answer-text-color);
-    background-color: var(--answer-background-color);
-    font-weight: normal;
-    max-width: 210px;
-    text-align: left;
 }
