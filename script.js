@@ -21,87 +21,79 @@ var startQuizBtn = document.querySelector("#start-quiz");
 startQuizBtn.addEventListener("click", function(event) {
     var questions = event.target;
 
-    if(questions.matches(".start-page")) {
-        const state = questions.getAttribute("data-state");
-        if (state === "hidden") {
-            questions.setAttribute("data-state", "visible");
-            var firstQuestion = questions.getAttribute(".start-page");
-            questions.textContent = firstQuestion
-        } else {
-            questions.setAttribute("data-state", "hidden");
-            questions.textContent = " ";
-        }
-    }
-
-    if(questions.matches(".first-question")) {
-        const state = questions.getAttribute("data-state");
-        if (state === "hidden") {
-            questions.setAttribute("data-state", "visible");
+    if(questions.matches("#first-question")) {
+        var firstQuestion = document.getElementById("first-question");
+        if (firstQuestion === "hidden") {
+            questions.setAttribute(".start-page", "visible");
             var firstQuestion = questions.getAttribute(".first-question-answers");
             questions.textContent = firstQuestion
         } else {
-            questions.setAttribute("data-state", "hidden");
-            questions.textContent = " ";
-        }
-    }
-
-    if(questions.matches(".second-question")) {
-        const state = questions.getAttribute("data-state");
-        if (state === "hidden") {
-            questions.setAttribute("data-state", "visible");
-            var firstQuestion = questions.getAttribute(".second-question-answers");
-            questions.textContent = firstQuestion
-        } else {
-            questions.setAttribute("data-state", "hidden");
-            questions.textContent = " ";
-        }
-    }
-
-    if(questions.matches(".third-question")) {
-        const state = questions.getAttribute("data-state");
-        if (state === "hidden") {
-            questions.setAttribute("data-state", "visible");
-            var firstQuestion = questions.getAttribute(".third-question-answers");
-            questions.textContent = firstQuestion
-        } else {
-            questions.setAttribute("data-state", "hidden");
-            questions.textContent = " ";
-        }
-    }
-
-    if(questions.matches(".fourth-question")) {
-        const state = questions.getAttribute("data-state");
-        if (state === "hidden") {
-            questions.setAttribute("data-state", "visible");
-            var firstQuestion = questions.getAttribute(".fourth-question-answers");
-            questions.textContent = firstQuestion
-        } else {
-            questions.setAttribute("data-state", "hidden");
-            questions.textContent = " ";
-        }
-    }
-
-    if(questions.matches(".fifth-question")) {
-        const state = questions.getAttribute("data-state");
-        if (state === "hidden") {
-            questions.setAttribute("data-state", "visible");
-            var firstQuestion = questions.getAttribute(".fifth-question-answers");
-            questions.textContent = firstQuestion
-        } else {
-            questions.setAttribute("data-state", "hidden");
-            questions.textContent = " ";
-        }
-    }
-
-    if(questions.matches(".all-done")) {
-        const state = questions.getAttribute("data-state");
-        if (state === "hidden") {
-            questions.setAttribute("data-state", "visible");
-            var firstQuestion = questions.getAttribute(".all-done");
-            questions.textContent = firstQuestion
-        } else {
-            questions.setAttribute("data-state", "hidden");
+            questions.setAttribute("hidden", "hidden");
             questions.textContent = " ";
         }
     }
 });
+
+
+// answerBtn.addEventListener("click", function(event))
+    // var answers = event.target.matches(.first-question-answers);
+
+// if(answers.matches("#second-question")) {
+//     const state = answers.getAttribute("hidden");
+//     if (state === "hidden") {
+//         answers.setAttribute("third-question", "visible");
+//         var secondQuestion = answers.getAttribute(".second-question-answers");
+//         questions.textContent = secondQuestion
+//     } else {
+//        answers.setAttribute("hidden", "hidden");
+//        answers.textContent = " ";
+//     }
+// }
+
+// if(answers.matches("#third-question")) {
+//     const state = answers.getAttribute("hidden");
+//     if (state === "hidden") {
+//         answers.setAttribute("fourth-question", "visible");
+//         var thirdQuestion = answers.getAttribute(".third-question-answers");
+//         answers.textContent = thirdQuestion
+//     } else {
+//        answers.setAttribute("hidden", "hidden");
+//        answers.textContent = " ";
+//     }
+// }
+
+// if(answers.matches("#fourth-question")) {
+//     const state = answers.getAttribute("hidden");
+//     if (state === "hidden") {
+//         answers.setAttribute("fifth-question", "visible");
+//         var fourthQuestion = answers.getAttribute(".fourth-question-answers");
+//         answers.textContent = fourthQuestion
+//     } else {
+//         answers.setAttribute("hidden", "hidden");
+//        answers.textContent = " ";
+//     }
+// }
+
+// if(answers.matches("#fifth-question")) {
+//     const state = answers.getAttribute("hidden");
+//     if (state === "hidden") {
+//         answers.setAttribute("all-done", "visible");
+//         var fifthQuestion = answers.getAttribute(".fifth-question-answers");
+//         answers.textContent = fifthQuestion
+//     } else {
+//         answers.setAttribute("hidden", "hidden");
+//         answers.textContent = " ";
+//     }
+// }
+
+// if(answers.matches("#all-done")) {
+//     const state = answers.getAttribute("hidden");
+//     if (state === "hidden") {
+//         answers.setAttribute("hidden", "visible");
+//         var firstQuestion = answers.getAttribute(".all-done");
+//         answers.textContent = firstQuestion
+//     } else {
+//        answers.setAttribute("hidden", "hidden");
+//        answers.textContent = " ";
+//     }
+// }

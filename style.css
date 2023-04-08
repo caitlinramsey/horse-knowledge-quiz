@@ -24,12 +24,16 @@ a {
     text-align: right;
 }
 
-.start-page {
+.hidden {
+    display: none;
+}
+
+#start-page {
 color: var(--heading-text-color);
 font-size: 1.5rem;
 text-align: center;
 margin: auto;
-width: 700px;
+width: 800px;
 }
 
 #start-quiz {
@@ -44,16 +48,21 @@ width: 700px;
     border-radius: 15px;
 }
 
-.first-question,
-.second-question,
-.third-question,
-.fourth-question,
-.fifth-question {
+#start-quiz:hover {
+    background-color: var(--view-high-scores-upper-left);
+    cursor: pointer;
+}
+
+#first-question,
+#second-question,
+#third-question,
+#fourth-question,
+#fifth-question {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     margin: auto;
-    width: 700px;
+    width: 800px;
 }
 
 #strings,
@@ -76,26 +85,48 @@ width: 700px;
     background-color: var(--answer-background-color);
     text-align: left;
     border: none;
-    padding: 10px 25px;
+    padding: 15px 25px;
     text-decoration: none;
     font-size: 1rem;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    width: 35%;
+}
+
+#strings:hover,
+#booleans:hover,
+#alerts:hover,
+#numbers:hover,
+#quotes:hover,
+#curly-brackets:hover,
+#parenthesis:hover,
+#square-brackets:hover,
+#numbers-and-strings:hover,
+#other-arrays:hover,
+#all-of-the-above:hover,
+#commas:hover,
+#javascript:hover,
+#terminal-bash:hover,
+#for-loops:hover,
+#console-log:hover {
+    background-color: var(--view-high-scores-upper-left);
+    cursor: pointer;
 }
 
 .all-done {
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     font-size: 2rem;
+    display: inline;
 }
 
 .all-done ul li{
     list-style: none;
     font-weight: normal;
     font-size: 1.5rem;
-    text-align: center;
+    text-align: left;
 }
 
 input {
@@ -116,6 +147,11 @@ font-size: 1.5rem;
 border-radius: 8px;
 }
 
+#submit:hover {
+    background-color: var(--view-high-scores-upper-left);
+    cursor: pointer;
+}
+
 .high-scores {
     font-weight: bold;
     text-align: center;
@@ -134,6 +170,11 @@ font-size: 1.5rem;
 border-radius: 8px;
 }
 
+#go-back:hover {
+    background-color: var(--view-high-scores-upper-left);
+    cursor: pointer;
+}
+
 #clear-high-scores {
 color: var(--answer-text-color);
 background-color: var(--answer-background-color);
@@ -144,4 +185,9 @@ text-decoration: none;
 display: inline-block;
 font-size: 1.5rem;
 border-radius: 8px;
+}
+
+#clear-high-scores:hover {
+    background-color: var(--view-high-scores-upper-left);
+    cursor: pointer;
 }
