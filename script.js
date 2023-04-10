@@ -1,5 +1,13 @@
 var timeEl = document.getElementById("time");
 var mainEl = document.getElementById("main");
+var startQuizBtn = document.querySelector("#start-quiz");
+var startQuizScreen = document.querySelector("#start-page")
+var firstQuestion = document.querySelector("#first-question");
+var secondQuestion = document.querySelector("#second-question");
+var thirdQuestion = document.querySelector("#third-question");
+var fourthQuestion = document.querySelector("#fourth-question");
+var fifthQuestion = document.querySelector("#fifth-question");
+var allDone = document.querySelector("#all-done");
 
 function countdown() {
     var secondsLeft = 75;
@@ -16,27 +24,59 @@ function countdown() {
 
 countdown();
 
-var startQuizBtn = document.querySelector("#start-quiz");
-
-startQuizBtn.addEventListener("click", function(event) {
+function questionClick(event) {
     var questions = event.target;
+    startQuizScreen.setAttribute("class", "hidden");
+    firstQuestion.removeAttribute("class");
+}
 
-    if(questions.matches("#first-question")) {
-        var firstQuestion = document.getElementById("first-question");
-        if (firstQuestion === "hidden") {
-            questions.setAttribute(".start-page", "visible");
-            var firstQuestion = questions.getAttribute(".first-question-answers");
-            questions.textContent = firstQuestion
-        } else {
-            questions.setAttribute("hidden", "hidden");
-            questions.textContent = " ";
-        }
-    }
-});
+function answerOneClick(event) {
+    var answers = event.target;
+    firstQuestion.setAttribute("class", "hidden");
+    secondQuestion.removeAttribute("class");
+}
+
+function answerTwoClick(event) {
+    var answers = event.target;
+    secondQuestion.setAttribute("class", "hidden");
+    thirdQuestion.removeAttribute("class");
+}
+
+function answerThreeClick(event) {
+    var answers = event.target;
+    thirdQuestion.setAttribute("class", "hidden");
+    fourthQuestion.removeAttribute("class");
+}
+
+function answerFourClick(event) {
+    var answers = event.target;
+    fourthQuestion.setAttribute("class", "hidden");
+    fifthQuestion.removeAttribute("class");
+}
+function answerFiveClick(event) {
+    var answers = event.target;
+    fifthQuestion.setAttribute("class", "hidden");
+    allDone.removeAttribute("class");
+}
+
+
+    // if(questions.matches("#first-question")) {
+            // questions.setAttribute(".start-page", "visible");
+    //         var firstQuestion = questions.getAttribute(".first-question-answers");
+    //         questions.textContent = firstQuestion
+    //     } else {
+    //         questions.setAttribute("hidden", "hidden");
+    //         questions.textContent = " ";
+    //     }
+    // }
+// }
+// startQuizBtn.addEventListener("click", function(event) {
+    
+// });
 
 
 // answerBtn.addEventListener("click", function(event))
-    // var answers = event.target.matches(.first-question-answers);
+//     var answers = event.target.matches(.first-question-answers);
 
 // if(answers.matches("#second-question")) {
 //     const state = answers.getAttribute("hidden");
@@ -97,3 +137,4 @@ startQuizBtn.addEventListener("click", function(event) {
 //        answers.textContent = " ";
 //     }
 // }
+startQuizBtn.onclick = questionClick;
