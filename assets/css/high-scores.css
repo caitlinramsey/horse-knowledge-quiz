@@ -1,0 +1,59 @@
+:root {
+    --answer-text-color: white;
+    --heading-text-color: black;
+    --answer-background-color: blueviolet;
+    --view-high-scores-upper-left: hotpink;
+    --input-border: cyan;
+}
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.high-scores {
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+}
+
+input {
+    border-color: var(--input-border);
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+a {
+color: var(--answer-text-color);
+background-color: var(--answer-background-color);
+text-align: center;
+border: none;
+padding: 5px 20px;
+text-decoration: none;
+display: inline-block;
+font-size: 1.5rem;
+border-radius: 8px;
+}
+
+a:hover {
+    background-color: var(--view-high-scores-upper-left);
+    cursor: pointer;
+}
+
+#clear-high-scores {
+color: var(--answer-text-color);
+background-color: var(--answer-background-color);
+text-align: center;
+border: none;
+padding: 5px 20px;
+text-decoration: none;
+display: inline-block;
+font-size: 1.5rem;
+border-radius: 8px;
+font-weight: bold;
+}
+
+#clear-high-scores:hover {
+    background-color: var(--view-high-scores-upper-left);
+    cursor: pointer;
+}

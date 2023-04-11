@@ -1,13 +1,6 @@
-var timeEl = document.getElementById("time");
+var timer = document.getElementById("time");
 var mainEl = document.getElementById("main");
 var startQuizBtn = document.querySelector("#start-quiz");
-var startQuizScreen = document.querySelector("#start-page")
-var firstQuestion = document.querySelector("#first-question");
-var secondQuestion = document.querySelector("#second-question");
-var thirdQuestion = document.querySelector("#third-question");
-var fourthQuestion = document.querySelector("#fourth-question");
-var fifthQuestion = document.querySelector("#fifth-question");
-var allDone = document.querySelector("#all-done");
 
 function countdown() {
     var secondsLeft = 75;
@@ -15,7 +8,7 @@ function countdown() {
     var timeInterval = setInterval(function() {
     
         secondsLeft--;
-        timeEl.textContent = "Time: " + secondsLeft
+        timer.textContent = "Time: " + secondsLeft
         if(secondsLeft === 0) {
             clearInterval(timeInterval);
         }
@@ -24,40 +17,7 @@ function countdown() {
 
 countdown();
 
-function questionClick(event) {
-    var questions = event.target;
-    startQuizScreen.setAttribute("class", "hidden");
-    firstQuestion.removeAttribute("class");
-}
 
-function answerOneClick(event) {
-    var answers = event.target;
-    firstQuestion.setAttribute("class", "hidden");
-    secondQuestion.removeAttribute("class");
-}
-
-function answerTwoClick(event) {
-    var answers = event.target;
-    secondQuestion.setAttribute("class", "hidden");
-    thirdQuestion.removeAttribute("class");
-}
-
-function answerThreeClick(event) {
-    var answers = event.target;
-    thirdQuestion.setAttribute("class", "hidden");
-    fourthQuestion.removeAttribute("class");
-}
-
-function answerFourClick(event) {
-    var answers = event.target;
-    fourthQuestion.setAttribute("class", "hidden");
-    fifthQuestion.removeAttribute("class");
-}
-function answerFiveClick(event) {
-    var answers = event.target;
-    fifthQuestion.setAttribute("class", "hidden");
-    allDone.removeAttribute("class");
-}
 
 
     // if(questions.matches("#first-question")) {
