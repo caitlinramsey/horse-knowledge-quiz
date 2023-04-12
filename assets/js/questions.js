@@ -45,18 +45,4 @@ var questions = {[
     },
   ]}
 
-function answer1() {
-    if (userChoice = question1.answer) {
-        textContent = ("Correct!")
-}   else {
-        textContent = ("Wrong!")
-}
-}
 
-function renderQuestion() {
-
-}
-
-function gameOver() {
-
-}

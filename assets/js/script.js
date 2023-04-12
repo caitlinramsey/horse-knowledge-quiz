@@ -1,6 +1,7 @@
 var timer = document.getElementById("time");
 var mainEl = document.getElementById("main");
 var startQuizBtn = document.querySelector("#start-quiz");
+var question1 = document.querySelector("question1")
 
 function countdown() {
     var secondsLeft = 75;
@@ -17,6 +18,30 @@ function countdown() {
 
 countdown();
 
+startQuizBtn.addEventListener("click", function() {
+    console.log(>>>button-click>>>)
+});
+
+// function answer1() {
+//     if (userChoice = question1.answer) {
+//         answer1.textContent = ("Correct!")
+// }   else {
+//         answer1.textContent = ("Wrong!")
+// }
+// }
+
+// function renderQuestion() {
+
+// }
+
+
+// function gameOver() {
+//     if(countdown === 0) {
+//         clearInterval(timeInterval)
+//         gameOver.textContent = "Game Over!"
+//     }
+// }
+
 
 
 
@@ -30,9 +55,6 @@ countdown();
     //     }
     // }
 // }
-// startQuizBtn.addEventListener("click", function(event) {
-    
-// });
 
 
 // answerBtn.addEventListener("click", function(event))
