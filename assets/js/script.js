@@ -1,8 +1,12 @@
 var timer = document.getElementById("time");
 var mainEl = document.getElementById("main");
 var startQuizBtn = document.querySelector("#start-quiz");
-var startPage = document.querySelector("#start-page")
-var question1 = document.querySelector(".question1")
+var startPage = document.querySelector("#start-page");
+var questionOne = document.getElementById("question[0].question");
+var questionTwo = document.getElementById("question[1].question");
+var questionThree = document.getElementById("question[2].question");
+var questionFour = document.getElementById("question[3].question");
+var questionFive = document.getElementById("question[4].question");
 
 function countdown() {
     var secondsLeft = 75;
@@ -23,8 +27,9 @@ startQuizBtn.addEventListener("click", function() {
     startPage.setAttribute("class", "hidden");
 });
 
-function answer1() {
-    if (userChoice = question1.answer) {
+
+function answers() {
+    if (userChoice = question[0].answer) {
         answer1.textContent = ("Correct!")
 }   else {
         answer1.textContent = ("Wrong!")
