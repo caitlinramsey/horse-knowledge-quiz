@@ -19,28 +19,28 @@ function countdown() {
 countdown();
 
 startQuizBtn.addEventListener("click", function() {
-    console.log(>>>button-click>>>)
+    console.log(">>>>button-click>>>")
 });
 
-// function answer1() {
-//     if (userChoice = question1.answer) {
-//         answer1.textContent = ("Correct!")
-// }   else {
-//         answer1.textContent = ("Wrong!")
-// }
-// }
+function answer1() {
+    if (userChoice = question1.answer) {
+        answer1.textContent = ("Correct!")
+}   else {
+        answer1.textContent = ("Wrong!")
+}
+}
 
-// function renderQuestion() {
+function renderQuestion() {
 
-// }
+}
 
 
-// function gameOver() {
-//     if(countdown === 0) {
-//         clearInterval(timeInterval)
-//         gameOver.textContent = "Game Over!"
-//     }
-// }
+function gameOver() {
+    if(countdown === 0) {
+        clearInterval(timeInterval)
+        gameOver.textContent = "Game Over!"
+    }
+}
 
 
 
@@ -119,4 +119,3 @@ startQuizBtn.addEventListener("click", function() {
 //        answers.textContent = " ";
 //     }
 // }
-startQuizBtn.onclick = questionClick;
