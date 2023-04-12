@@ -1,7 +1,8 @@
 var timer = document.getElementById("time");
 var mainEl = document.getElementById("main");
 var startQuizBtn = document.querySelector("#start-quiz");
-var question1 = document.querySelector("question1")
+var startPage = document.querySelector("#start-page")
+var question1 = document.querySelector(".question1")
 
 function countdown() {
     var secondsLeft = 75;
@@ -19,7 +20,7 @@ function countdown() {
 countdown();
 
 startQuizBtn.addEventListener("click", function() {
-    console.log(">>>>button-click>>>")
+    startPage.setAttribute("class", "hidden");
 });
 
 function answer1() {
