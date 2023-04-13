@@ -2,6 +2,7 @@ var timer = document.getElementById("time");
 var mainEl = document.getElementById("main");
 var startQuizBtn = document.querySelector("#start-quiz");
 var startPage = document.querySelector("#start-page");
+var questionTitle = document.querySelector("#heading").children;
 
 function countdown() {
     var secondsLeft = 75;
@@ -27,7 +28,7 @@ startQuizBtn.addEventListener("click", function() {
 function renderFirstQuestion() {
     var heading = document.querySelector("#heading")
     var choicesContainer = document.querySelector("#choices")
-    var questionTitle = document.querySelector("#heading").children
+    // var questionTitle = document.querySelector("#heading").children
     var choices = document.querySelector("#choices").children
     // var firstQuestionChoices = document.querySelector("#first-question-choices").children
     heading.classList.remove("hidden")
@@ -41,7 +42,6 @@ function renderFirstQuestion() {
 }
 
 choices.addEventListener("click", function() {
-    var questionTitle = document.querySelector("#heading").children
     questionTitle[1].classList.remove("hidden")
     renderSecondQuestion()
 })
