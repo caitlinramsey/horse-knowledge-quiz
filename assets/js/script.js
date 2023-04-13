@@ -7,6 +7,8 @@ var heading = document.querySelector("#heading");
 var choicesContainer = document.querySelector("#choices");
 var submitBtn = document.querySelector("#submit");
 var clearHighScoresBtn = document.querySelector("#clear-high-scores");
+var choicesEl = document.querySelector("#choices");
+var answer = document.querySelector("answers");
 
 function countdown() {
     var secondsLeft = 75;
@@ -45,10 +47,10 @@ function renderFirstQuestion() {
     choices[3].textContent = questions[0].choice_D
 }
 
-choices.addEventListener("click", function() {
-    questionTitle[1].classList.remove("hidden")
-    renderSecondQuestion()
-})
+// choices.addEventListener("click", function() {
+//     questionTitle[1].classList.remove("hidden")
+//     renderSecondQuestion()
+// })
 
 function renderSecondQuestion() {
     var choices = document.querySelector("#choices").children
@@ -66,10 +68,10 @@ function renderSecondQuestion() {
     choices[3].textContent = questions[0].choice_D
 }
 
-choices.addEventListener("click", function() {
-    questionTitle[2].classList.remove("hidden")
-    renderThirdQuestion()
-})
+// choices.addEventListener("click", function() {
+//     questionTitle[2].classList.remove("hidden")
+//     renderThirdQuestion()
+// })
 
 function renderThirdQuestion() {
     var choices = document.querySelector("#choices").children
@@ -87,10 +89,10 @@ function renderThirdQuestion() {
     choices[3].textContent = questions[0].choice_D
 }
 
-choices.addEventListener("click", function() {
-    questionTitle[3].classList.remove("hidden")
-    renderFourthQuestion()
-})
+// choices.addEventListener("click", function() {
+//     questionTitle[3].classList.remove("hidden")
+//     renderFourthQuestion()
+// })
 
 function renderFourthQuestion() {
     var choices = document.querySelector("#choices").children
@@ -108,10 +110,10 @@ function renderFourthQuestion() {
     choices[3].textContent = questions[0].choice_D
 }
 
-choices.addEventListener("click", function() {
-    questionTitle[4].classList.remove("hidden")
-    renderFifthQuestion()
-})
+// choices.addEventListener("click", function() {
+//     questionTitle[4].classList.remove("hidden")
+//     renderFifthQuestion()
+// })
 
 function renderFifthQuestion() {
     var choices = document.querySelector("#choices").children
@@ -129,22 +131,42 @@ function renderFifthQuestion() {
     choices[3].textContent = questions[0].choice_D
 }
 
-choices.addEventListener("click", function() {
-    questionTitle[5].classList.remove("hidden")
-    renderAllDone()
-})
+// choices.addEventListener("click", function() {
+//     questionTitle[5].classList.remove("hidden")
+//     renderAllDone()
+// })
+
+var currentQuestionIndex = 0
+
+function createQuestion() {
+    var currentQuestion = currentQuestion = questions[currentQuestionIndex];
+
+    for (var i = 0; i<currentQuestion.choices.length; i++) {
+
+    }
+
+    currentQuestionIndex++
+
+}
+
+function answerCheck(event) {
+
+    var userChoice = event.target
+
+    if (userChoice = questions.answer) {
+        answer.textContent = "Correct!"
+    } else {
+        answer.textContent = "Wrong!"
+    }
+
+    currentQuestionIndex++
+
+    createQuestion();
+}
 
 function allDone() {
 
 }
-
-// function answers() {
-//     if (userChoice = question[0].answer) {
-//         answer.textContent = ("Correct!")
-// }   else {
-//         answer.textContent = ("Wrong!")
-// }
-// }
 
 function gameOver() {
     if(countdown === 0) {
@@ -154,16 +176,18 @@ function gameOver() {
     }
 }
 
-submitBtn.addEventListener("click", function(event) {
-event.preventDefault();
+// submitBtn.addEventListener("click", function(event) {
+// event.preventDefault();
 
-var highScore = localStorage.getItem("high-scores")
+// var highScore = localStorage.getItem("high-scores")
 
-localStorage.setItem("highScore", JSON.stringify(highScore))
-window.location.href = "./high-scores.html"
+// localStorage.setItem("highScore", JSON.stringify(highScore))
+// window.location.href = "./high-scores.html"
 
-});
+// });
 
-clearHighScoresBtn.addEventListener("click", function() {
-    localStorage.clear();
-})
+// clearHighScoresBtn.addEventListener("click", function() {
+//     localStorage.clear();
+// })
+
+choicesEl.onclick = answerCheck
