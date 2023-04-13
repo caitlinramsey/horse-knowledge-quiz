@@ -8,7 +8,7 @@ var choicesContainer = document.querySelector("#choices");
 var submitBtn = document.querySelector("#submit");
 var clearHighScoresBtn = document.querySelector("#clear-high-scores");
 var choicesEl = document.querySelector("#choices");
-var answer = document.querySelector("answers");
+var answer = document.querySelector("#answers");
 
 function countdown() {
     var secondsLeft = 75;
@@ -139,7 +139,9 @@ function renderFifthQuestion() {
 var currentQuestionIndex = 0
 
 function createQuestion() {
-    var currentQuestion = currentQuestion = questions[currentQuestionIndex];
+    console.log(questions)
+    var currentQuestion = questions[currentQuestionIndex];
+
 
     for (var i = 0; i<currentQuestion.choices.length; i++) {
 
