@@ -12,6 +12,7 @@ function countdown() {
         timer.textContent = "Time: " + secondsLeft
         if(secondsLeft === 0) {
             clearInterval(timeInterval);
+            setTimeout(gameOver(), 3000);
         }
     }, 1000);
 }
@@ -28,13 +29,19 @@ function renderFirstQuestion() {
     var choicesContainer = document.querySelector("#choices")
     var questionTitle = document.querySelector("#heading").children
     var choices = document.querySelector("#choices").children
+    // var firstQuestionChoices = document.querySelector("#first-question-choices").children
     heading.classList.remove("hidden")
     choicesContainer.classList.remove("hidden")
     questionTitle[0].classList.remove("hidden")
     choices[0].classList.remove("hidden")
+    heading.textContent = questions[0].question
+    // firstQuestionChoices.classList.remove("hidden")
+    // choicesContainer.textContent = questions[0].firstQuestionChoices
+    choicesContainer.textContent = questions[0].choice_A
 }
 
-choice[0].addEventListener("click", function() {
+choices.addEventListener("click", function() {
+    var questionTitle = document.querySelector("#heading").children
     questionTitle[1].classList.remove("hidden")
     renderSecondQuestion()
 })
@@ -44,9 +51,10 @@ function renderSecondQuestion() {
     choicesContainer.classList.remove("hidden")
     questionTitle[1].classList.remove("hidden")
     choices[1].classList.remove("hidden")
+    heading.textContent = questions[1].question;
 }
 
-choice[1].addEventListener("click", function() {
+choices.addEventListener("click", function() {
     questionTitle[2].classList.remove("hidden")
     renderThirdQuestion()
 })
@@ -56,9 +64,10 @@ function renderThirdQuestion() {
     choicesContainer.classList.remove("hidden")
     questionTitle[2].classList.remove("hidden")
     choices[2].classList.remove("hidden")
+    heading.textContent = questions[2].question;
 }
 
-choice[2].addEventListener("click", function() {
+choices.addEventListener("click", function() {
     questionTitle[3].classList.remove("hidden")
     renderFourthQuestion()
 })
@@ -68,9 +77,10 @@ function renderFourthQuestion() {
     choicesContainer.classList.remove("hidden")
     questionTitle[3].classList.remove("hidden")
     choices[3].classList.remove("hidden")
+    heading.textContent = questions[3].question;
 }
 
-choice[3].addEventListener("click", function() {
+choices.addEventListener("click", function() {
     questionTitle[4].classList.remove("hidden")
     renderFifthQuestion()
 })
@@ -80,9 +90,10 @@ function renderFifthQuestion() {
     choicesContainer.classList.remove("hidden")
     questionTitle[4].classList.remove("hidden")
     choices[4].classList.remove("hidden")
+    heading.textContent = questions[4].question;
 }
 
-choice[4].addEventListener("click", function() {
+choices.addEventListener("click", function() {
     questionTitle[5].classList.remove("hidden")
     renderAllDone()
 })
@@ -105,3 +116,17 @@ function gameOver() {
         gameOver.textContent = "Game Over!"
     }
 }
+
+submitBtn.addEventListener("click", function(event) {
+event.preventDefault();
+
+var highScore = localStorage.getItem("high-scores")
+
+localStorage.setItem("highScore", JSON.stringify(highScore))
+window.location.href = "./high-scores.html"
+
+});
+
+clearHighScoresBtn.addEventListener("click", function() {
+    localStorage.clear();
+})

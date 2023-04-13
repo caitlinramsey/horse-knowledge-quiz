@@ -53,80 +53,31 @@ width: 800px;
     cursor: pointer;
 }
 
-#first-question,
-#second-question,
-#third-question,
-#fourth-question,
-#fifth-question {
+#heading {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     margin: auto;
     width: 800px;
+    padding-bottom: 20px;
 }
 
-#strings,
-#booleans,
-#alerts,
-#numbers,
-#quotes,
-#curly-brackets,
-#parenthesis,
-#square-brackets,
-#numbers-and-strings,
-#other-arrays,
-#all-of-the-above,
-#commas,
-#javascript,
-#terminal-bash,
-#for-loops,
-#console-log {
+#choices {
     color: var(--answer-text-color);
     background-color: var(--answer-background-color);
     text-align: left;
-    border: none;
     padding: 15px 25px;
-    text-decoration: none;
     font-size: 1rem;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    width: 35%;
+    width: 15%;
 }
 
-#strings:hover,
-#booleans:hover,
-#alerts:hover,
-#numbers:hover,
-#quotes:hover,
-#curly-brackets:hover,
-#parenthesis:hover,
-#square-brackets:hover,
-#numbers-and-strings:hover,
-#other-arrays:hover,
-#all-of-the-above:hover,
-#commas:hover,
-#javascript:hover,
-#terminal-bash:hover,
-#for-loops:hover,
-#console-log:hover {
+#choices:hover {
     background-color: var(--view-high-scores-upper-left);
     cursor: pointer;
-}
-
-.all-done {
-    font-weight: bold;
-    text-align: left;
-    font-size: 2rem;
-    display: inline;
-}
-
-.all-done ul li{
-    list-style: none;
-    font-weight: normal;
-    font-size: 1.5rem;
-    text-align: left;
 }
 
 input {
