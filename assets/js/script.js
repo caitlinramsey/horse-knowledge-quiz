@@ -35,8 +35,14 @@ function renderFirstQuestion() {
     choicesContainer.classList.remove("hidden")
     questionTitle[0].classList.remove("hidden")
     choices[0].classList.remove("hidden")
+    choices[1].classList.remove("hidden")
+    choices[2].classList.remove("hidden")
+    choices[3].classList.remove("hidden")
     heading.textContent = questions[0].question
-    choicesContainer.textContent = questions[0].choice_A
+    choices[0].textContent = questions[0].choice_A
+    choices[1].textContent = questions[0].choice_B
+    choices[2].textContent = questions[0].choice_C
+    choices[3].textContent = questions[0].choice_D
 }
 
 choices.addEventListener("click", function() {
@@ -45,11 +51,19 @@ choices.addEventListener("click", function() {
 })
 
 function renderSecondQuestion() {
+    var choices = document.querySelector("#choices").children
     heading.classList.remove("hidden")
     choicesContainer.classList.remove("hidden")
     questionTitle[1].classList.remove("hidden")
+    choices[0].classList.remove("hidden")
     choices[1].classList.remove("hidden")
-    heading.textContent = questions[1].question;
+    choices[2].classList.remove("hidden")
+    choices[3].classList.remove("hidden")
+    heading.textContent = questions[0].question
+    choices[0].textContent = questions[0].choice_A
+    choices[1].textContent = questions[0].choice_B
+    choices[2].textContent = questions[0].choice_C
+    choices[3].textContent = questions[0].choice_D
 }
 
 choices.addEventListener("click", function() {
@@ -58,11 +72,19 @@ choices.addEventListener("click", function() {
 })
 
 function renderThirdQuestion() {
+    var choices = document.querySelector("#choices").children
     heading.classList.remove("hidden")
     choicesContainer.classList.remove("hidden")
     questionTitle[2].classList.remove("hidden")
+    choices[0].classList.remove("hidden")
+    choices[1].classList.remove("hidden")
     choices[2].classList.remove("hidden")
-    heading.textContent = questions[2].question;
+    choices[3].classList.remove("hidden")
+    heading.textContent = questions[0].question
+    choices[0].textContent = questions[0].choice_A
+    choices[1].textContent = questions[0].choice_B
+    choices[2].textContent = questions[0].choice_C
+    choices[3].textContent = questions[0].choice_D
 }
 
 choices.addEventListener("click", function() {
@@ -71,11 +93,19 @@ choices.addEventListener("click", function() {
 })
 
 function renderFourthQuestion() {
+    var choices = document.querySelector("#choices").children
     heading.classList.remove("hidden")
     choicesContainer.classList.remove("hidden")
     questionTitle[3].classList.remove("hidden")
+    choices[0].classList.remove("hidden")
+    choices[1].classList.remove("hidden")
+    choices[2].classList.remove("hidden")
     choices[3].classList.remove("hidden")
-    heading.textContent = questions[3].question;
+    heading.textContent = questions[0].question
+    choices[0].textContent = questions[0].choice_A
+    choices[1].textContent = questions[0].choice_B
+    choices[2].textContent = questions[0].choice_C
+    choices[3].textContent = questions[0].choice_D
 }
 
 choices.addEventListener("click", function() {
@@ -84,11 +114,19 @@ choices.addEventListener("click", function() {
 })
 
 function renderFifthQuestion() {
+    var choices = document.querySelector("#choices").children
     heading.classList.remove("hidden")
     choicesContainer.classList.remove("hidden")
     questionTitle[4].classList.remove("hidden")
-    choices[4].classList.remove("hidden")
-    heading.textContent = questions[4].question;
+    choices[0].classList.remove("hidden")
+    choices[1].classList.remove("hidden")
+    choices[2].classList.remove("hidden")
+    choices[3].classList.remove("hidden")
+    heading.textContent = questions[0].question
+    choices[0].textContent = questions[0].choice_A
+    choices[1].textContent = questions[0].choice_B
+    choices[2].textContent = questions[0].choice_C
+    choices[3].textContent = questions[0].choice_D
 }
 
 choices.addEventListener("click", function() {

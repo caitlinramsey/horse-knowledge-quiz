@@ -62,7 +62,10 @@ width: 800px;
     padding-bottom: 20px;
 }
 
-#choices {
+#first-choices,
+#second-choices,
+#third-choices,
+#fourth-choices {
     color: var(--answer-text-color);
     background-color: var(--answer-background-color);
     text-align: left;
@@ -75,7 +78,10 @@ width: 800px;
     width: 15%;
 }
 
-#choices:hover {
+#first-choices:hover,
+#second-choices:hover,
+#third-choices:hover,
+#fourth-choices:hover {
     background-color: var(--view-high-scores-upper-left);
     cursor: pointer;
 }
