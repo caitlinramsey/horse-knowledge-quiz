@@ -5,6 +5,8 @@ var startPage = document.querySelector("#start-page");
 var questionTitle = document.querySelector("#heading").children;
 var heading = document.querySelector("#heading");
 var choicesContainer = document.querySelector("#choices");
+var submitBtn = document.querySelector("#submit");
+var clearHighScoresBtn = document.querySelector("#clear-high-scores");
 
 function countdown() {
     var secondsLeft = 75;
