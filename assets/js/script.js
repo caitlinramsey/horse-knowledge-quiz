@@ -3,6 +3,8 @@ var mainEl = document.getElementById("main");
 var startQuizBtn = document.querySelector("#start-quiz");
 var startPage = document.querySelector("#start-page");
 var questionTitle = document.querySelector("#heading").children;
+var heading = document.querySelector("#heading");
+var choicesContainer = document.querySelector("#choices");
 
 function countdown() {
     var secondsLeft = 75;
@@ -26,18 +28,12 @@ startQuizBtn.addEventListener("click", function() {
 });
 
 function renderFirstQuestion() {
-    var heading = document.querySelector("#heading")
-    var choicesContainer = document.querySelector("#choices")
-    // var questionTitle = document.querySelector("#heading").children
     var choices = document.querySelector("#choices").children
-    // var firstQuestionChoices = document.querySelector("#first-question-choices").children
     heading.classList.remove("hidden")
     choicesContainer.classList.remove("hidden")
     questionTitle[0].classList.remove("hidden")
     choices[0].classList.remove("hidden")
     heading.textContent = questions[0].question
-    // firstQuestionChoices.classList.remove("hidden")
-    // choicesContainer.textContent = questions[0].firstQuestionChoices
     choicesContainer.textContent = questions[0].choice_A
 }
 
