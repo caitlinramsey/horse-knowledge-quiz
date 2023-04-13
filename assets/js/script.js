@@ -102,9 +102,9 @@ function allDone() {
 
 // function answers() {
 //     if (userChoice = question[0].answer) {
-//         answer1.textContent = ("Correct!")
+//         answer.textContent = ("Correct!")
 // }   else {
-//         answer1.textContent = ("Wrong!")
+//         answer.textContent = ("Wrong!")
 // }
 // }
 
@@ -112,6 +112,7 @@ function gameOver() {
     if(countdown === 0) {
         clearInterval(timeInterval)
         gameOver.textContent = "Game Over!"
+        alert = "Game Over!"
     }
 }
 
