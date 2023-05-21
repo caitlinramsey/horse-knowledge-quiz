@@ -1,16 +1,3 @@
-var timer = document.getElementById("time");
-var mainEl = document.getElementById("main");
-var startQuizBtn = document.querySelector("#start-quiz");
-var startPage = document.querySelector("#start-page");
-var questionTitle = document.querySelector("#heading").children;
-var heading = document.querySelector("#heading");
-var choicesContainer = document.querySelector("#choices");
-var submitBtn = document.querySelector("#submit");
-var clearHighScoresBtn = document.querySelector("#clear-high-scores");
-var choicesEl = document.querySelector("#choices");
-var answer = document.querySelector("#answers");
-
-
 var questions = [
     {
       question: "Commonly used brushes to groom a horse DO NOT include:",
@@ -43,188 +30,92 @@ var questions = [
     }
   ]
 
-let 
+let questionNumber = 0;
+let secondsLeft =75;
 
-function countdown() {
-    var secondsLeft = 75;
+const timer = document.getElementById('timer');
+let timeInterval;
+let timeoutMessage;
 
-    var timeInterval = setInterval(function() {
-    
-        secondsLeft--;
-        timer.textContent = "Time: " + secondsLeft
-        if(secondsLeft === 0) {
-            clearInterval(timeInterval);
-            setTimeout(gameOver(), 3000);
-        }
+const quizHeader = document.getElementById('quiz-hedaer');
+const questions = document.getElementById('questions');
+
+function askQuestion(num) {
+    quizHeader.textContent = quiz[num].question;
+    const answers = quiz[num].answers
+    document.getElementById('answer-1').innerHTML = "1. " + answers[0]
+    document.getElementById('answer-2').innerHTML = "2. " + answers[1]
+    document.getElementById('answer-3').innerHTML = "3. " + answers[2]
+    document.getElementById('answer-4').innerHTML = "4. " + answers[3]
+}
+
+document.getElementById('start-quiz').onclick = function () {
+    questions.hidden = false;
+    document.getElementById('starting').hidden = true;
+    setQuestion(0);
+    timerInterval = setInterval(function() {
+        timer.innerHTML = --seconds;
     }, 1000);
 }
 
-countdown();
+function tempMessage(type) {
+    if(type === "correct"){
+        document.getElementById('correct').hidden = false;
+        document.getElementById('wrong').hidden = true;
+    } else {
+        document.getElementById('correct').hidden = true;
+        document.getElementById('wrong').hidden = false;
+    }
+    document.getElementById('temp').hidden = true;
+    tempMessageTimeout = setTimeout(function () {
+        document.getElementById('temp').hodden = true;
+    }, 2000)
+}
 
-startQuizBtn.addEventListener("click", function() {
-    startPage.setAttribute("class", "hidden");
-    renderFirstQuestion()
-});
+function answer(userAnswer) {
+    clearTimeout(tempMessageTimeout);
+    if(userAnswer === quiz[questionNumber].answer) {
+        tempMessage("correct")
+    } else {
+        seconds -= 20;
+        timer.innerHTML = seconds;
+        tempMessage("wrong")
+    }
 
-// function renderFirstQuestion() {
-//     var choices = document.querySelector("#choices").children
-//     heading.classList.remove("hidden")
-//     choicesContainer.classList.remove("hidden")
-//     questionTitle[0].classList.remove("hidden")
-//     choices[0].classList.remove("hidden")
-//     choices[1].classList.remove("hidden")
-//     choices[2].classList.remove("hidden")
-//     choices[3].classList.remove("hidden")
-//     heading.textContent = questions[0].question
-//     choices[0].textContent = questions[0].choice_A
-//     choices[1].textContent = questions[0].choice_B
-//     choices[2].textContent = questions[0].choice_C
-//     choices[3].textContent = questions[0].choice_D
-// }
+    questionNumber += 1;
+    if(questionNumber < quiz.length) {
+        setQuestion(questionNumber);
+    } else {
+        quizHeader.innerHTML = "All done!";
+        questions.hidden = true;
+        document.getElementById('all-done').hidden = false;
+        clearInterval(timeInterval);
+        if (seconds < 0) {
+            seconds = 0
+        }
+        document.getElementById('results').innerHTML = seconds;
+    }
+}
 
-// // choices.addEventListener("click", function() {
-// //     questionTitle[1].classList.remove("hidden")
-// //     renderSecondQuestion()
-// // })
+document.getElementById('answer-1').onclick = function () { answer(1) };
+document.getElementById('answer-2').onclick = function () { answer(2) };
+document.getElementById('answer-3').onclick = function () { answer(3) };
+document.getElementById('answer-4').onclick = function () { answer(4) };
 
-// function renderSecondQuestion() {
-//     var choices = document.querySelector("#choices").children
-//     heading.classList.remove("hidden")
-//     choicesContainer.classList.remove("hidden")
-//     questionTitle[1].classList.remove("hidden")
-//     choices[0].classList.remove("hidden")
-//     choices[1].classList.remove("hidden")
-//     choices[2].classList.remove("hidden")
-//     choices[3].classList.remove("hidden")
-//     heading.textContent = questions[0].question
-//     choices[0].textContent = questions[0].choice_A
-//     choices[1].textContent = questions[0].choice_B
-//     choices[2].textContent = questions[0].choice_C
-//     choices[3].textContent = questions[0].choice_D
-// }
-
-// // choices.addEventListener("click", function() {
-// //     questionTitle[2].classList.remove("hidden")
-// //     renderThirdQuestion()
-// // })
-
-// function renderThirdQuestion() {
-//     var choices = document.querySelector("#choices").children
-//     heading.classList.remove("hidden")
-//     choicesContainer.classList.remove("hidden")
-//     questionTitle[2].classList.remove("hidden")
-//     choices[0].classList.remove("hidden")
-//     choices[1].classList.remove("hidden")
-//     choices[2].classList.remove("hidden")
-//     choices[3].classList.remove("hidden")
-//     heading.textContent = questions[0].question
-//     choices[0].textContent = questions[0].choice_A
-//     choices[1].textContent = questions[0].choice_B
-//     choices[2].textContent = questions[0].choice_C
-//     choices[3].textContent = questions[0].choice_D
-// }
-
-// // choices.addEventListener("click", function() {
-// //     questionTitle[3].classList.remove("hidden")
-// //     renderFourthQuestion()
-// // })
-
-// function renderFourthQuestion() {
-//     var choices = document.querySelector("#choices").children
-//     heading.classList.remove("hidden")
-//     choicesContainer.classList.remove("hidden")
-//     questionTitle[3].classList.remove("hidden")
-//     choices[0].classList.remove("hidden")
-//     choices[1].classList.remove("hidden")
-//     choices[2].classList.remove("hidden")
-//     choices[3].classList.remove("hidden")
-//     heading.textContent = questions[0].question
-//     choices[0].textContent = questions[0].choice_A
-//     choices[1].textContent = questions[0].choice_B
-//     choices[2].textContent = questions[0].choice_C
-//     choices[3].textContent = questions[0].choice_D
-// }
-
-// // choices.addEventListener("click", function() {
-// //     questionTitle[4].classList.remove("hidden")
-// //     renderFifthQuestion()
-// // })
-
-// function renderFifthQuestion() {
-//     var choices = document.querySelector("#choices").children
-//     heading.classList.remove("hidden")
-//     choicesContainer.classList.remove("hidden")
-//     questionTitle[4].classList.remove("hidden")
-//     choices[0].classList.remove("hidden")
-//     choices[1].classList.remove("hidden")
-//     choices[2].classList.remove("hidden")
-//     choices[3].classList.remove("hidden")
-//     heading.textContent = questions[0].question
-//     choices[0].textContent = questions[0].choice_A
-//     choices[1].textContent = questions[0].choice_B
-//     choices[2].textContent = questions[0].choice_C
-//     choices[3].textContent = questions[0].choice_D
-// }
-
-// // choices.addEventListener("click", function() {
-// //     questionTitle[5].classList.remove("hidden")
-// //     renderAllDone()
-// // })
-
-// var currentQuestionIndex = 0
-
-// function createQuestion() {
-//     console.log(questions)
-//     var currentQuestion = questions[currentQuestionIndex];
-//     console.log(questions[currentQuestionIndex])
-
-//     for (var i = 0; i<currentQuestion.choices.length; i++) {
-
-//     }
-
-//     currentQuestionIndex++
-
-// }
-
-// function answerCheck(event) {
-
-//     var userChoice = event.target
-
-//     if (userChoice = questions.answer) {
-//         answer.textContent = "Correct!"
-//     } else {
-//         answer.textContent = "Wrong!"
-//     }
-
-//     currentQuestionIndex++
-
-//     createQuestion();
-// }
-
-// function allDone() {
-
-// }
-
-// function gameOver() {
-//     if(countdown === 0) {
-//         clearInterval(timeInterval)
-//         gameOver.textContent = "Game Over!"
-//         alert = "Game Over!"
-//     }
-// }
-
-// // submitBtn.addEventListener("click", function(event) {
-// // event.preventDefault();
-
-// // var highScore = localStorage.getItem("high-scores")
-
-// // localStorage.setItem("highScore", JSON.stringify(highScore))
-// // window.location.href = "./high-scores.html"
-
-// // });
-
-// // clearHighScoresBtn.addEventListener("click", function() {
-// //     localStorage.clear();
-// // })
-
-// choicesEl.onclick = answerCheck
+document.getElementById('submit').onclick = function () {
+    let initials = document.getElementById('initials').value;
+    if (!initials || initials.length > 3) {
+        tempMessage("wrong");
+        return;
+    }
+    initials = initials.toUpperCase();
+    const scores = JSON.parse(localStorage.getItem("scores")) || [];
+    const score = { initials, seconds }
+    scores.push(score);
+    seconds = 0;
+    scores.sort(function (c, d) {
+        return d.seconds = c.seconds
+    });
+    localStorage.setItem("scores", JSON.stringify(scores))
+    window.location.href = "./highscore.html";
+};
