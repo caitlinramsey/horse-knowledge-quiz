@@ -10,97 +10,52 @@
 
   <body>
 
-    <section id = "header">
-    <section class = "upper-left-high-scores">
+    <header>
+      <nav>
         <a href = "high-scores.html">View High Scores</a>
-        <h1 id = "time"></h1>
-        <div id = "main"></div>
-    </section>
-    </section>
+      </nav>
+      <aside>Time: <span id="timer":>0</span>
+      </aside>
+    </header>
 
-    <div id = "start-page">
-        <header>
-            <h1>Horse Knowledge Challenge</h1>
-        </header>
-        <p>Try to answer the following horse-related questions within the time limit.
-           Keep in mind that incorrect answers will penalize your score/time by ten seconds!
-        </p>
+    <main>
+    <h1 id="quiz-header">Horse Knowledge Challenge</h1>
 
-    <button id = "start-quiz" class = "btn">Start Quiz</button>
-    </div>
-
-    <section id = "heading" class = "hidden">
-
-      <h1 class = "hidden"></h1>
-      <h1 class = "hidden"></h1>
-      <h1 class = "hidden"></h1>
-      <h1 class = "hidden"></h1>
-      <h1 class = "hidden"></h1>
-
-    </section>
-
-    <section id = "choices" class = "hidden">
-
-      <div id = "first-choices" class = "hidden">
-        
-      </div>
-
-      <div id = "second-choices" class = "hidden">
-        
-      </div>
-
-      <div id = "third-choices" class = "hidden">
+    <section id="starting">
       
-      </div>
-
-      <div id = "fourth-choices" class = "hidden">
-       
-      </div>
-
-      <div id = "fifth-choices" class = "hidden">
-        
-      </div>
-
+      <p>Try to answer the following horse-related questions within the time limit.
+         Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+      </p>
+      <button id ="start-quiz" class = "btn">Start Quiz</button>
     </section>
 
-    <section id = "answers" class = "hidden">
-
-      <div id = "first-answer">
-
-      </div>
-
-      <div id = "second-answer">
-
-      </div>
-
-      <div id = "third-answer">
-
-      </div>
-
-      <div id = "fourth-answer">
-
-      </div>
-
-      <div id = "fifth-answer">
-
-      </div>
-      
+    <section id ="questions" hidden>
+      <button id="answer-1"></button>>
+      <button id="answer-2"></button>>
+      <button id="answer-3"></button>>
+      <button id="answer-4"></button>>
     </section>
 
-    <section id = "all-done" class = "hidden">
+    <section id = "all-done" hidden>
         <h1>All done!</h1>
-        <ul>
-            <li>Your final score is .</li>
-            <li>Enter initals: 
-            <input type = "text"></input>
-            <div id = "submit">
-            <a href = "high-scores.html">Submit</a>
-            </div>
-            </li>
-        </ul>
+        <p>Your final score is: <span id="results"></span></p>
+
+        <div class="input">
+            <label for>Enter initals:</label> 
+            <input id ="initials"></input>
+            <button id="submit">Submit</button>
+        </div>
     </section>
+
+    <section id="temp" hidden>
+      <hr>
+      <p id="wrong" hidden>Wrong!</p>
+      <p id="correct" hidden>Correct!</p>
+    </section>
+  </main>
 
     <script src="./assets/js/questions.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
+
 </html>

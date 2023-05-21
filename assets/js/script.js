@@ -10,6 +10,41 @@ var clearHighScoresBtn = document.querySelector("#clear-high-scores");
 var choicesEl = document.querySelector("#choices");
 var answer = document.querySelector("#answers");
 
+
+var questions = [
+    {
+      question: "Commonly used brushes to groom a horse DO NOT include:",
+      answers: ["Curry comb", "Hard brush", "Soft brush", "Bridle"],
+      answer: 4
+    },
+
+    {
+        question: "What breed of horse does Budweiser use to pull their carriage?",
+        answers: ["Thoroughbred", "Percheron", "Clydesdale", "Appaloosa"],
+        answer: 3
+    },
+      
+    {
+        question: "Which of these is NOT a piece of tack?",
+        answers: ["Hoof pick", "Saddle", "Bridle", "Girth"],
+        answer: 1
+    },
+
+    {
+        question: "Which of these is NOT a Triple Crown winner?",
+        answers: ["Secretariat", "Seattle Slew", "Whirlaway", "Seabiscuit"],
+        answer: 4
+    },
+
+    {
+        question: "Which of these is NOT part of a horse hoof?",
+        answers: ["Wall", "Frog", "Withers", "Sole"],
+        answer: 3
+    }
+  ]
+
+let 
+
 function countdown() {
     var secondsLeft = 75;
 
@@ -31,165 +66,165 @@ startQuizBtn.addEventListener("click", function() {
     renderFirstQuestion()
 });
 
-function renderFirstQuestion() {
-    var choices = document.querySelector("#choices").children
-    heading.classList.remove("hidden")
-    choicesContainer.classList.remove("hidden")
-    questionTitle[0].classList.remove("hidden")
-    choices[0].classList.remove("hidden")
-    choices[1].classList.remove("hidden")
-    choices[2].classList.remove("hidden")
-    choices[3].classList.remove("hidden")
-    heading.textContent = questions[0].question
-    choices[0].textContent = questions[0].choice_A
-    choices[1].textContent = questions[0].choice_B
-    choices[2].textContent = questions[0].choice_C
-    choices[3].textContent = questions[0].choice_D
-}
+// function renderFirstQuestion() {
+//     var choices = document.querySelector("#choices").children
+//     heading.classList.remove("hidden")
+//     choicesContainer.classList.remove("hidden")
+//     questionTitle[0].classList.remove("hidden")
+//     choices[0].classList.remove("hidden")
+//     choices[1].classList.remove("hidden")
+//     choices[2].classList.remove("hidden")
+//     choices[3].classList.remove("hidden")
+//     heading.textContent = questions[0].question
+//     choices[0].textContent = questions[0].choice_A
+//     choices[1].textContent = questions[0].choice_B
+//     choices[2].textContent = questions[0].choice_C
+//     choices[3].textContent = questions[0].choice_D
+// }
 
-// choices.addEventListener("click", function() {
+// // choices.addEventListener("click", function() {
+// //     questionTitle[1].classList.remove("hidden")
+// //     renderSecondQuestion()
+// // })
+
+// function renderSecondQuestion() {
+//     var choices = document.querySelector("#choices").children
+//     heading.classList.remove("hidden")
+//     choicesContainer.classList.remove("hidden")
 //     questionTitle[1].classList.remove("hidden")
-//     renderSecondQuestion()
-// })
+//     choices[0].classList.remove("hidden")
+//     choices[1].classList.remove("hidden")
+//     choices[2].classList.remove("hidden")
+//     choices[3].classList.remove("hidden")
+//     heading.textContent = questions[0].question
+//     choices[0].textContent = questions[0].choice_A
+//     choices[1].textContent = questions[0].choice_B
+//     choices[2].textContent = questions[0].choice_C
+//     choices[3].textContent = questions[0].choice_D
+// }
 
-function renderSecondQuestion() {
-    var choices = document.querySelector("#choices").children
-    heading.classList.remove("hidden")
-    choicesContainer.classList.remove("hidden")
-    questionTitle[1].classList.remove("hidden")
-    choices[0].classList.remove("hidden")
-    choices[1].classList.remove("hidden")
-    choices[2].classList.remove("hidden")
-    choices[3].classList.remove("hidden")
-    heading.textContent = questions[0].question
-    choices[0].textContent = questions[0].choice_A
-    choices[1].textContent = questions[0].choice_B
-    choices[2].textContent = questions[0].choice_C
-    choices[3].textContent = questions[0].choice_D
-}
+// // choices.addEventListener("click", function() {
+// //     questionTitle[2].classList.remove("hidden")
+// //     renderThirdQuestion()
+// // })
 
-// choices.addEventListener("click", function() {
+// function renderThirdQuestion() {
+//     var choices = document.querySelector("#choices").children
+//     heading.classList.remove("hidden")
+//     choicesContainer.classList.remove("hidden")
 //     questionTitle[2].classList.remove("hidden")
-//     renderThirdQuestion()
-// })
+//     choices[0].classList.remove("hidden")
+//     choices[1].classList.remove("hidden")
+//     choices[2].classList.remove("hidden")
+//     choices[3].classList.remove("hidden")
+//     heading.textContent = questions[0].question
+//     choices[0].textContent = questions[0].choice_A
+//     choices[1].textContent = questions[0].choice_B
+//     choices[2].textContent = questions[0].choice_C
+//     choices[3].textContent = questions[0].choice_D
+// }
 
-function renderThirdQuestion() {
-    var choices = document.querySelector("#choices").children
-    heading.classList.remove("hidden")
-    choicesContainer.classList.remove("hidden")
-    questionTitle[2].classList.remove("hidden")
-    choices[0].classList.remove("hidden")
-    choices[1].classList.remove("hidden")
-    choices[2].classList.remove("hidden")
-    choices[3].classList.remove("hidden")
-    heading.textContent = questions[0].question
-    choices[0].textContent = questions[0].choice_A
-    choices[1].textContent = questions[0].choice_B
-    choices[2].textContent = questions[0].choice_C
-    choices[3].textContent = questions[0].choice_D
-}
+// // choices.addEventListener("click", function() {
+// //     questionTitle[3].classList.remove("hidden")
+// //     renderFourthQuestion()
+// // })
 
-// choices.addEventListener("click", function() {
+// function renderFourthQuestion() {
+//     var choices = document.querySelector("#choices").children
+//     heading.classList.remove("hidden")
+//     choicesContainer.classList.remove("hidden")
 //     questionTitle[3].classList.remove("hidden")
-//     renderFourthQuestion()
-// })
+//     choices[0].classList.remove("hidden")
+//     choices[1].classList.remove("hidden")
+//     choices[2].classList.remove("hidden")
+//     choices[3].classList.remove("hidden")
+//     heading.textContent = questions[0].question
+//     choices[0].textContent = questions[0].choice_A
+//     choices[1].textContent = questions[0].choice_B
+//     choices[2].textContent = questions[0].choice_C
+//     choices[3].textContent = questions[0].choice_D
+// }
 
-function renderFourthQuestion() {
-    var choices = document.querySelector("#choices").children
-    heading.classList.remove("hidden")
-    choicesContainer.classList.remove("hidden")
-    questionTitle[3].classList.remove("hidden")
-    choices[0].classList.remove("hidden")
-    choices[1].classList.remove("hidden")
-    choices[2].classList.remove("hidden")
-    choices[3].classList.remove("hidden")
-    heading.textContent = questions[0].question
-    choices[0].textContent = questions[0].choice_A
-    choices[1].textContent = questions[0].choice_B
-    choices[2].textContent = questions[0].choice_C
-    choices[3].textContent = questions[0].choice_D
-}
+// // choices.addEventListener("click", function() {
+// //     questionTitle[4].classList.remove("hidden")
+// //     renderFifthQuestion()
+// // })
 
-// choices.addEventListener("click", function() {
+// function renderFifthQuestion() {
+//     var choices = document.querySelector("#choices").children
+//     heading.classList.remove("hidden")
+//     choicesContainer.classList.remove("hidden")
 //     questionTitle[4].classList.remove("hidden")
-//     renderFifthQuestion()
-// })
+//     choices[0].classList.remove("hidden")
+//     choices[1].classList.remove("hidden")
+//     choices[2].classList.remove("hidden")
+//     choices[3].classList.remove("hidden")
+//     heading.textContent = questions[0].question
+//     choices[0].textContent = questions[0].choice_A
+//     choices[1].textContent = questions[0].choice_B
+//     choices[2].textContent = questions[0].choice_C
+//     choices[3].textContent = questions[0].choice_D
+// }
 
-function renderFifthQuestion() {
-    var choices = document.querySelector("#choices").children
-    heading.classList.remove("hidden")
-    choicesContainer.classList.remove("hidden")
-    questionTitle[4].classList.remove("hidden")
-    choices[0].classList.remove("hidden")
-    choices[1].classList.remove("hidden")
-    choices[2].classList.remove("hidden")
-    choices[3].classList.remove("hidden")
-    heading.textContent = questions[0].question
-    choices[0].textContent = questions[0].choice_A
-    choices[1].textContent = questions[0].choice_B
-    choices[2].textContent = questions[0].choice_C
-    choices[3].textContent = questions[0].choice_D
-}
+// // choices.addEventListener("click", function() {
+// //     questionTitle[5].classList.remove("hidden")
+// //     renderAllDone()
+// // })
 
-// choices.addEventListener("click", function() {
-//     questionTitle[5].classList.remove("hidden")
-//     renderAllDone()
-// })
+// var currentQuestionIndex = 0
 
-var currentQuestionIndex = 0
+// function createQuestion() {
+//     console.log(questions)
+//     var currentQuestion = questions[currentQuestionIndex];
+//     console.log(questions[currentQuestionIndex])
 
-function createQuestion() {
-    console.log(questions)
-    var currentQuestion = questions[currentQuestionIndex];
-    console.log(questions[currentQuestionIndex])
+//     for (var i = 0; i<currentQuestion.choices.length; i++) {
 
-    for (var i = 0; i<currentQuestion.choices.length; i++) {
+//     }
 
-    }
+//     currentQuestionIndex++
 
-    currentQuestionIndex++
+// }
 
-}
+// function answerCheck(event) {
 
-function answerCheck(event) {
+//     var userChoice = event.target
 
-    var userChoice = event.target
+//     if (userChoice = questions.answer) {
+//         answer.textContent = "Correct!"
+//     } else {
+//         answer.textContent = "Wrong!"
+//     }
 
-    if (userChoice = questions.answer) {
-        answer.textContent = "Correct!"
-    } else {
-        answer.textContent = "Wrong!"
-    }
+//     currentQuestionIndex++
 
-    currentQuestionIndex++
+//     createQuestion();
+// }
 
-    createQuestion();
-}
+// function allDone() {
 
-function allDone() {
+// }
 
-}
+// function gameOver() {
+//     if(countdown === 0) {
+//         clearInterval(timeInterval)
+//         gameOver.textContent = "Game Over!"
+//         alert = "Game Over!"
+//     }
+// }
 
-function gameOver() {
-    if(countdown === 0) {
-        clearInterval(timeInterval)
-        gameOver.textContent = "Game Over!"
-        alert = "Game Over!"
-    }
-}
+// // submitBtn.addEventListener("click", function(event) {
+// // event.preventDefault();
 
-// submitBtn.addEventListener("click", function(event) {
-// event.preventDefault();
+// // var highScore = localStorage.getItem("high-scores")
 
-// var highScore = localStorage.getItem("high-scores")
+// // localStorage.setItem("highScore", JSON.stringify(highScore))
+// // window.location.href = "./high-scores.html"
 
-// localStorage.setItem("highScore", JSON.stringify(highScore))
-// window.location.href = "./high-scores.html"
+// // });
 
-// });
+// // clearHighScoresBtn.addEventListener("click", function() {
+// //     localStorage.clear();
+// // })
 
-// clearHighScoresBtn.addEventListener("click", function() {
-//     localStorage.clear();
-// })
-
-choicesEl.onclick = answerCheck
+// choicesEl.onclick = answerCheck
