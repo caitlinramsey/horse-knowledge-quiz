@@ -141,7 +141,7 @@ var currentQuestionIndex = 0
 function createQuestion() {
     console.log(questions)
     var currentQuestion = questions[currentQuestionIndex];
-
+    console.log(questions[currentQuestionIndex])
 
     for (var i = 0; i<currentQuestion.choices.length; i++) {
 
