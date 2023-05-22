@@ -31,7 +31,7 @@ var questions = [
   ]
 
 let questionNumber = 0;
-let secondsLeft =75;
+let secondsLeft = 75;
 
 const timer = document.getElementById('timer');
 let timeInterval;
