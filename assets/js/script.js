@@ -37,7 +37,7 @@ const timer = document.getElementById('timer');
 let timeInterval;
 let timeoutMessage;
 
-const quizHeader = document.getElementById('quiz-hedaer');
+const quizHeader = document.getElementById('quiz-header');
 const showQuestions = document.getElementById('questions');
 
 function askQuestion(num) {
@@ -54,7 +54,7 @@ document.getElementById('start-quiz').onclick = function () {
     document.getElementById('starting').hidden = true;
     askQuestion(0);
     timerInterval = setInterval(function () {
-        timer.innerHTML = --seconds;
+        timer.innerHTML = --secondsLeft;
     }, 1000);
 }
 
