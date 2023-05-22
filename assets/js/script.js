@@ -38,11 +38,11 @@ let timeInterval;
 let timeoutMessage;
 
 const quizHeader = document.getElementById('quiz-hedaer');
-const questions = document.getElementById('questions');
+const showQuestions = document.getElementById('questions');
 
 function askQuestion(num) {
-    quizHeader.textContent = quiz[num].question;
-    const answers = quiz[num].answers
+    quizHeader.textContent = questions[num].question;
+    const answers = questions[num].answers;
     document.getElementById('answer-1').innerHTML = "1. " + answers[0]
     document.getElementById('answer-2').innerHTML = "2. " + answers[1]
     document.getElementById('answer-3').innerHTML = "3. " + answers[2]
@@ -52,8 +52,8 @@ function askQuestion(num) {
 document.getElementById('start-quiz').onclick = function () {
     questions.hidden = false;
     document.getElementById('starting').hidden = true;
-    setQuestion(0);
-    timerInterval = setInterval(function() {
+    askQuestion(0);
+    timerInterval = setInterval(function () {
         timer.innerHTML = --seconds;
     }, 1000);
 }
@@ -74,7 +74,7 @@ function tempMessage(type) {
 
 function answer(userAnswer) {
     clearTimeout(tempMessageTimeout);
-    if(userAnswer === quiz[questionNumber].answer) {
+    if(userAnswer === questions[questionNumber].answer) {
         tempMessage("correct")
     } else {
         seconds -= 20;
@@ -83,7 +83,7 @@ function answer(userAnswer) {
     }
 
     questionNumber += 1;
-    if(questionNumber < quiz.length) {
+    if(questionNumber < questions.length) {
         setQuestion(questionNumber);
     } else {
         quizHeader.innerHTML = "All done!";
