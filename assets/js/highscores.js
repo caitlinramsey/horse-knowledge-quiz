@@ -5,14 +5,14 @@ if(scores) {
     const score = scores[i];
     const li = document.createElement("li");
     li.innerHTML = score.initials + " - " + score.seconds
-    list.appendChild(li);
+    scoresList.appendChild(li);
   }
 
 }
 
 document.getElementById('clear-high-scores').onclick = function() {
   localStorage.removeItem("scores");
-  list.remove();
+  scoresList.remove();
 }
 
 document.getElementById('go-back').onclick = function() {
