@@ -10,32 +10,35 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.high-scores {
+#high-scores {
+    float: none;
     font-weight: bold;
     text-align: center;
     font-size: 2rem;
 }
 
-input {
-    border-color: var(--input-border);
-    width: 200px;
-    height: 30px;
-    margin-bottom: 20px;
+ol {
+    display: inline;
 }
 
-a {
-color: var(--answer-text-color);
-background-color: var(--answer-background-color);
-text-align: center;
-border: none;
-padding: 5px 20px;
-text-decoration: none;
-display: inline-block;
-font-size: 1.5rem;
-border-radius: 8px;
+li {
+    background-color: var(--answer-background-color);
 }
 
-a:hover {
+#go-back {
+    background-color: var(--answer-background-color);
+    color: var(--answer-text-color);
+    text-align: center;
+    border: none;
+    padding: 5px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#go-back:hover {
     background-color: var(--view-high-scores-upper-left);
     cursor: pointer;
 }
