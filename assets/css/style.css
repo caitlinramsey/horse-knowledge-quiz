@@ -63,7 +63,7 @@ section p {
 }
 
 #questions-button {
-    display: grid;
+    display: block;
     align-content: center;
     background-color: var(--answer-background-color);
     color: var(--answer-text-color);

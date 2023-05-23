@@ -52,6 +52,7 @@ function askQuestion(num) {
 document.getElementById('start-quiz').onclick = function () {
     questions.hidden = false;
     document.getElementById('starting').hidden = true;
+    showQuestions.removeAttribute('hidden');
     askQuestion(0);
     timerInterval = setInterval(function () {
         timer.innerHTML = --secondsLeft;
@@ -73,27 +74,27 @@ function tempMessage(type) {
 }
 
 function answer(userAnswer) {
-    clearTimeout(tempMessageTimeout);
+    clearTimeout(timeoutMessage);
     if(userAnswer === questions[questionNumber].answer) {
         tempMessage("correct")
     } else {
-        seconds -= 20;
-        timer.innerHTML = seconds;
+        secondsLeft -= 20;
+        timer.innerHTML = secondsLeft;
         tempMessage("wrong")
     }
 
     questionNumber += 1;
     if(questionNumber < questions.length) {
-        setQuestion(questionNumber);
+        askQuestion(questionNumber);
     } else {
         quizHeader.innerHTML = "All done!";
         questions.hidden = true;
         document.getElementById('all-done').hidden = false;
         clearInterval(timeInterval);
-        if (seconds < 0) {
-            seconds = 0
+        if (secondsLeft < 0) {
+            secondsLeft = 0
         }
-        document.getElementById('results').innerHTML = seconds;
+        document.getElementById('results').innerHTML = secondsLeft;
     }
 }
 
@@ -110,11 +111,11 @@ document.getElementById('submit').onclick = function () {
     }
     initials = initials.toUpperCase();
     const scores = JSON.parse(localStorage.getItem("scores")) || [];
-    const score = { initials, seconds }
+    const score = { initials, secondsLeft }
     scores.push(score);
-    seconds = 0;
+    secondsLeft = 0;
     scores.sort(function (c, d) {
-        return d.seconds = c.seconds
+        return d.secondsLeft - c.secondsLeft
     });
     localStorage.setItem("scores", JSON.stringify(scores))
     window.location.href = "./highscore.html";
