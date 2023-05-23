@@ -69,10 +69,9 @@ function tempMessage(type) {
         document.getElementById('correct').hidden = true;
         document.getElementById('wrong').hidden = false;
     }
-    // document.getElementById('temp').hidden = true;
     tempMessageTimeout = setTimeout(function () {
         document.getElementById('temp').hidden = true;
-    }, 2000)
+    }, 1000)
 }
 
 function answer(userAnswer) {

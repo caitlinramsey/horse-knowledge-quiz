@@ -62,14 +62,18 @@ section p {
     font-size: 1rem;
 }
 
-#questions-button {
+#questions button {
     display: block;
     align-content: center;
+    border: none;
+    padding: 1rem;
     background-color: var(--answer-background-color);
+    margin-top: 1rem;
     color: var(--answer-text-color);
+    border-radius: 5px;
 }
 
-#questions-button:hover {
+#questions button:hover {
     background-color: var(--view-high-scores-upper-left);
     cursor: pointer;
 }
