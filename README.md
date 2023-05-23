@@ -6,4 +6,4 @@ Below is a screenshot of the home page of my coding quiz:
 
 ![Horse-Knowldege-Challenge](https://user-images.githubusercontent.com/60635509/231897088-018eac80-6d37-4db4-9f5b-cd366ac1abb8.png)
 
-Here is a link to the deployed site: https://github.com/caitlinramsey/coding-quiz
+Here is a link to the deployed site: [https://github.com/caitlinramsey/coding-quiz](https://caitlinramsey.github.io/coding-quiz/)
