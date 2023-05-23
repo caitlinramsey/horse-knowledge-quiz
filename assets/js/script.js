@@ -119,5 +119,5 @@ document.getElementById('submit').onclick = function () {
         return d.secondsLeft - c.secondsLeft
     });
     localStorage.setItem('scores', JSON.stringify(scores))
-    window.location.href = './highscore.html';
+    window.location.href = './high-scores.html';
 };
