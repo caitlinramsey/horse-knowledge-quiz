@@ -24,7 +24,7 @@ ol {
 
 li {
     background-color: var(--high-score-background);
-    margin-bottom: 2rem;
+    margin-bottom: .5rem;
 }
 
 #go-back {
