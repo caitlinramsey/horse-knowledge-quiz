@@ -54,7 +54,7 @@ document.getElementById('start-quiz').onclick = function () {
     document.getElementById('starting').hidden = true;
     showQuestions.removeAttribute('hidden');
     askQuestion(0);
-    timerInterval = setInterval(function () {
+    timeInterval = setInterval(function () {
         timer.innerHTML = --secondsLeft;
     }, 1000);
 }
@@ -69,7 +69,7 @@ function tempMessage(type) {
     }
     document.getElementById('temp').hidden = true;
     tempMessageTimeout = setTimeout(function () {
-        document.getElementById('temp').hodden = true;
+        document.getElementById('temp').hidden = true;
     }, 2000)
 }
 
@@ -88,7 +88,7 @@ function answer(userAnswer) {
         askQuestion(questionNumber);
     } else {
         quizHeader.innerHTML = "All done!";
-        questions.hidden = true;
+        showQuestions.hidden = true;
         document.getElementById('all-done').hidden = false;
         clearInterval(timeInterval);
         if (secondsLeft < 0) {

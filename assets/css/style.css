@@ -74,18 +74,6 @@ section p {
     cursor: pointer;
 }
 
-/* #submit {
-color: var(--answer-text-color);
-background-color: var(--answer-background-color);
-text-align: center;
-border: none;
-padding: 5px 20px;
-text-decoration: none;
-display: inline-block;
-font-size: 1.5rem;
-border-radius: 8px;
-} */
-
 .input {
     display: flex;
     flex-direction: row;
@@ -96,8 +84,13 @@ border-radius: 8px;
 }
 
 .input button {
+    background-color: var(--answer-background-color);
+    color: var(--answer-text-color);
     padding: 0 1rem;
     margin-left: 1rem;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
 }
 
 .input button:hover {
