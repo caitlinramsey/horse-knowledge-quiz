@@ -37,7 +37,7 @@ main {
 main h1 {
     text-align: center;
     color: var(--heading-text-color);
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 #starting button {
@@ -71,6 +71,7 @@ section p {
     margin-top: 1rem;
     color: var(--answer-text-color);
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 #questions button:hover {
@@ -79,7 +80,7 @@ section p {
 }
 
 .input {
-    display: flex;
+    display: inline;
     flex-direction: row;
     align-items: stretch;
     border-color: var(--input-border);
@@ -90,7 +91,7 @@ section p {
 .input button {
     background-color: var(--answer-background-color);
     color: var(--answer-text-color);
-    padding: 0 1rem;
+    padding: .5rem 1rem;
     margin-left: 1rem;
     border: none;
     font-size: 1rem;
@@ -100,4 +101,8 @@ section p {
 .input button:hover {
     background-color: var(--view-high-scores-upper-left);
     cursor: pointer;
+}
+
+#all-done {
+    align-content: center;
 }
