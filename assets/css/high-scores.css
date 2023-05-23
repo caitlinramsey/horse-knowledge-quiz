@@ -3,7 +3,7 @@
     --heading-text-color: black;
     --answer-background-color: blueviolet;
     --view-high-scores-upper-left: hotpink;
-    --input-border: cyan;
+    --high-score-background: lightgrey;
 }
 
 * {
@@ -19,10 +19,12 @@
 
 ol {
     display: inline;
+    margin-bottom: 2rem;
 }
 
 li {
-    background-color: var(--answer-background-color);
+    background-color: var(--high-score-background);
+    margin-bottom: 2rem;
 }
 
 #go-back {
