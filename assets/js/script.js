@@ -1,31 +1,31 @@
 var questions = [
     {
-      question: "Commonly used brushes to groom a horse DO NOT include:",
-      answers: ["Curry comb", "Hard brush", "Soft brush", "Bridle"],
+      question: 'Commonly used brushes to groom a horse DO NOT include:',
+      answers: ['Curry comb', 'Hard brush', 'Soft brush', 'Bridle'],
       answer: 4
     },
 
     {
-        question: "What breed of horse does Budweiser use to pull their carriage?",
-        answers: ["Thoroughbred", "Percheron", "Clydesdale", "Appaloosa"],
+        question: 'What breed of horse does Budweiser use to pull their carriage?',
+        answers: ['Thoroughbred', 'Percheron', 'Clydesdale', 'Appaloosa'],
         answer: 3
     },
       
     {
-        question: "Which of these is NOT a piece of tack?",
-        answers: ["Hoof pick", "Saddle", "Bridle", "Girth"],
+        question: 'Which of these is NOT a piece of tack?',
+        answers: ['Hoof pick', 'Saddle', 'Bridle', 'Girth'],
         answer: 1
     },
 
     {
-        question: "Which of these is NOT a Triple Crown winner?",
-        answers: ["Secretariat", "Seattle Slew", "Whirlaway", "Seabiscuit"],
+        question: 'Which of these is NOT a Triple Crown winner?',
+        answers: ['Secretariat', 'Seattle Slew', 'Whirlaway', 'Seabiscuit'],
         answer: 4
     },
 
     {
-        question: "Which of these is NOT part of a horse hoof?",
-        answers: ["Wall", "Frog", "Withers", "Sole"],
+        question: 'Which of these is NOT part of a horse hoof?',
+        answers: ['Wall', 'Frog', 'Withers', 'Sole'],
         answer: 3
     }
   ]
@@ -43,10 +43,10 @@ const showQuestions = document.getElementById('questions');
 function askQuestion(num) {
     quizHeader.textContent = questions[num].question;
     const answers = questions[num].answers;
-    document.getElementById('answer-1').innerHTML = "1. " + answers[0]
-    document.getElementById('answer-2').innerHTML = "2. " + answers[1]
-    document.getElementById('answer-3').innerHTML = "3. " + answers[2]
-    document.getElementById('answer-4').innerHTML = "4. " + answers[3]
+    document.getElementById('answer-1').innerHTML = '1. ' + answers[0]
+    document.getElementById('answer-2').innerHTML = '2. ' + answers[1]
+    document.getElementById('answer-3').innerHTML = '3. ' + answers[2]
+    document.getElementById('answer-4').innerHTML = '4. ' + answers[3]
 }
 
 document.getElementById('start-quiz').onclick = function () {
@@ -60,14 +60,16 @@ document.getElementById('start-quiz').onclick = function () {
 }
 
 function tempMessage(type) {
-    if(type === "correct"){
+    if(type === 'correct'){
+        document.getElementById('temp').hidden = false;
         document.getElementById('correct').hidden = false;
         document.getElementById('wrong').hidden = true;
     } else {
+        document.getElementById('temp').hidden = false;
         document.getElementById('correct').hidden = true;
         document.getElementById('wrong').hidden = false;
     }
-    document.getElementById('temp').hidden = true;
+    // document.getElementById('temp').hidden = true;
     tempMessageTimeout = setTimeout(function () {
         document.getElementById('temp').hidden = true;
     }, 2000)
@@ -76,18 +78,18 @@ function tempMessage(type) {
 function answer(userAnswer) {
     clearTimeout(timeoutMessage);
     if(userAnswer === questions[questionNumber].answer) {
-        tempMessage("correct")
+        tempMessage('correct')
     } else {
         secondsLeft -= 20;
         timer.innerHTML = secondsLeft;
-        tempMessage("wrong")
+        tempMessage('wrong')
     }
 
     questionNumber += 1;
     if(questionNumber < questions.length) {
         askQuestion(questionNumber);
     } else {
-        quizHeader.innerHTML = "All done!";
+        quizHeader.innerHTML = 'All done!';
         showQuestions.hidden = true;
         document.getElementById('all-done').hidden = false;
         clearInterval(timeInterval);
@@ -106,17 +108,17 @@ document.getElementById('answer-4').onclick = function () { answer(4) };
 document.getElementById('submit').onclick = function () {
     let initials = document.getElementById('initials').value;
     if (!initials || initials.length > 3) {
-        tempMessage("wrong");
+        tempMessage('wrong');
         return;
     }
     initials = initials.toUpperCase();
-    const scores = JSON.parse(localStorage.getItem("scores")) || [];
+    const scores = JSON.parse(localStorage.getItem('scores')) || [];
     const score = { initials, secondsLeft }
     scores.push(score);
     secondsLeft = 0;
     scores.sort(function (c, d) {
         return d.secondsLeft - c.secondsLeft
     });
-    localStorage.setItem("scores", JSON.stringify(scores))
-    window.location.href = "./highscore.html";
+    localStorage.setItem('scores', JSON.stringify(scores))
+    window.location.href = './highscore.html';
 };
