@@ -28,7 +28,6 @@ nav {
 }
 
 main {
-    float: left;
     padding: 2rem;
     padding-top: 1rem;
     align-items: center;
@@ -104,5 +103,5 @@ section p {
 }
 
 #all-done {
-    align-content: center;
+    text-align: center;
 }
