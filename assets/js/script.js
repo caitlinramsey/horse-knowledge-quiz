@@ -88,7 +88,7 @@ function answer(userAnswer) {
     if(questionNumber < questions.length) {
         askQuestion(questionNumber);
     } else {
-        quizHeader.innerHTML = 'All done!';
+        quizHeader.innerHTML = 'All Done!';
         showQuestions.hidden = true;
         document.getElementById('all-done').hidden = false;
         clearInterval(timeInterval);

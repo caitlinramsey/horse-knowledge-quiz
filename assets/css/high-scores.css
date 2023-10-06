@@ -1,8 +1,7 @@
 :root {
     --answer-text-color: white;
     --heading-text-color: black;
-    --answer-background-color: blueviolet;
-    --view-high-scores-upper-left: hotpink;
+    --answer-background-color: rgb(24, 219, 219);
     --high-score-background: lightgrey;
 }
 
@@ -41,8 +40,8 @@ li {
 }
 
 #go-back:hover {
-    background-color: var(--view-high-scores-upper-left);
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 #clear-high-scores {
@@ -59,6 +58,6 @@ font-weight: bold;
 }
 
 #clear-high-scores:hover {
-    background-color: var(--view-high-scores-upper-left);
     cursor: pointer;
+    transform: scale(1.1);
 }

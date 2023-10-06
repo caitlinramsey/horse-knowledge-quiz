@@ -1,8 +1,7 @@
 :root {
     --answer-text-color: white;
     --heading-text-color: black;
-    --answer-background-color: blueviolet;
-    --view-high-scores-upper-left: hotpink;
+    --answer-background-color: rgb(24, 219, 219);
     --input-border: cyan;
 }
 
@@ -39,6 +38,11 @@ main h1 {
     font-size: 2rem;
 }
 
+#quiz-header {
+    font-size: 50px;
+    text-align: center;
+}
+
 #starting button {
     display: grid;
     margin: auto;
@@ -51,8 +55,8 @@ main h1 {
 }
 
 #starting button:hover {
-    background-color: var(--view-high-scores-upper-left);
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 section p {
@@ -64,6 +68,7 @@ section p {
 #questions button {
     display: block;
     align-content: center;
+    margin: auto;
     border: none;
     padding: 1rem;
     background-color: var(--answer-background-color);
@@ -74,17 +79,13 @@ section p {
 }
 
 #questions button:hover {
-    background-color: var(--view-high-scores-upper-left);
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 .input {
     display: inline;
-    flex-direction: row;
-    align-items: stretch;
     border-color: var(--input-border);
-    width: 200px;
-    height: 30px;
 }
 
 .input button {
@@ -98,10 +99,20 @@ section p {
 }
 
 .input button:hover {
-    background-color: var(--view-high-scores-upper-left);
     cursor: pointer;
 }
 
 #all-done {
     text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+    #quiz-header {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    .input button {
+        margin-top: 2rem;
+    }
 }
